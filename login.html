@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
     <style>
         .auth-top-controls {
             position: fixed;
@@ -45,6 +47,14 @@
             color: var(--text-main);
             border-color: var(--glass-border);
             box-shadow: none;
+        }
+
+        [data-theme="dark"] .auth-card .form-control {
+            color: #f8fbff;
+        }
+
+        [data-theme="dark"] .auth-card .form-control::placeholder {
+            color: rgba(248, 251, 255, 0.55);
         }
 
         .social-auth-divider {
@@ -83,6 +93,16 @@
         .social-auth-btn:hover {
             background: var(--glass-bg);
             color: var(--text-main);
+        }
+
+        .auth-card a.text-info {
+            transition: var(--transition-smooth);
+        }
+
+        .auth-card a.text-info:hover,
+        .auth-card a.text-info:focus-visible {
+            color: #ffffff !important;
+            text-decoration: underline !important;
         }
     </style>
 </head>
@@ -169,3 +189,4 @@
 </body>
 
 </html>
+

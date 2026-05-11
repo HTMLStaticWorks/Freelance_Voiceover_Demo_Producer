@@ -17,6 +17,55 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/style.css">
+
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
+    <style>
+        .downloads-table {
+            --bs-table-bg: #1f2630;
+            --bs-table-color: #e6edf7;
+            --bs-table-border-color: rgba(255, 255, 255, 0.14);
+            --bs-table-hover-bg: rgba(255, 255, 255, 0.04);
+            --bs-table-hover-color: #f8fbff;
+        }
+
+        .downloads-table thead th {
+            color: #a8b8cc;
+        }
+
+        .downloads-table td {
+            color: #e6edf7;
+        }
+
+        .downloads-table .text-muted {
+            color: #9fb0c5 !important;
+        }
+
+        .downloads-table td:not(:first-child):not(:last-child)::before {
+            color: #8ea1b8 !important;
+        }
+
+        @media (max-width: 991.98px) {
+            .dashboard-header {
+                position: relative;
+                padding-inline-end: 11rem;
+            }
+
+            .dashboard-header>div:last-child {
+                position: absolute;
+                top: 0;
+                inset-inline-end: 0;
+                margin: 0 !important;
+                width: auto !important;
+                justify-content: flex-end;
+                gap: 0.5rem !important;
+            }
+
+            .dashboard-header .user-profile-widget {
+                margin-inline-end: 0 !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -76,7 +125,7 @@
 
             <div class="studio-card p-0 overflow-hidden">
                 <div class="table-responsive">
-                    <table class="table table-hover table-dark mb-0">
+                    <table class="table table-hover table-dark mb-0 downloads-table">
                         <thead>
                             <tr>
                                 <th class="ps-4">File Name</th>
@@ -142,3 +191,4 @@
 </body>
 
 </html>
+

@@ -183,6 +183,19 @@ h6 {
     padding-inline: 2rem;
 }
 
+.navbar .container-fluid {
+    align-items: center;
+}
+
+.navbar .navbar-nav {
+    align-items: center;
+}
+
+.navbar .nav-item {
+    display: flex;
+    align-items: center;
+}
+
 .navbar.scrolled {
     background: var(--nav-scrolled-bg);
     backdrop-filter: blur(10px);
@@ -195,6 +208,13 @@ h6 {
     margin-inline: 1rem;
     position: relative;
     white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+}
+
+.navbar .nav-login-btn {
+    display: inline-flex;
+    align-items: center;
 }
 
 .nav-link::after {
@@ -208,8 +228,13 @@ h6 {
     transition: var(--transition-smooth);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after,
+.nav-link.active::after {
     width: 100%;
+}
+
+.nav-link.active {
+    color: var(--accent-blue) !important;
 }
 
 /* Buttons */
@@ -456,6 +481,17 @@ footer .text-info.fs-5:focus-visible {
         z-index: 1066;
     }
 
+    .navbar .container-fluid {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar .navbar-toggler {
+        order: -1;
+        margin-inline-end: 0.75rem;
+        margin-inline-start: 0;
+    }
+
     .navbar .navbar-toggler {
         display: inline-flex !important;
         align-items: center;
@@ -467,6 +503,10 @@ footer .text-info.fs-5:focus-visible {
 
     .navbar .navbar-toggler:focus {
         box-shadow: none;
+    }
+
+    [data-theme="dark"] .navbar .navbar-toggler-icon {
+        filter: invert(1) brightness(1.6);
     }
 
     .navbar .navbar-collapse {
@@ -502,9 +542,11 @@ footer .text-info.fs-5:focus-visible {
     }
 
     .navbar .navbar-nav {
+        flex-direction: column !important;
         align-items: flex-start !important;
         gap: 0.35rem;
         padding-top: 1rem;
+        width: 100%;
     }
 
     .navbar .nav-item {
@@ -636,7 +678,7 @@ footer .text-info.fs-5:focus-visible {
         margin-bottom: 1rem;
     }
 
-    .dashboard-layout .sidebar.active + .main-content .sidebar-mobile-trigger {
+    .dashboard-layout .sidebar.active+.main-content .sidebar-mobile-trigger {
         opacity: 0;
         pointer-events: none;
     }
@@ -739,4 +781,3 @@ footer .text-info.fs-5:focus-visible {
         padding: 1rem;
     }
 }
-

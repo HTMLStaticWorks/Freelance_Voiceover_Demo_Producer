@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
     <style>
         .hero-section {
             min-height: 100vh;
@@ -48,6 +50,40 @@
             height: 200px;
             opacity: 0.1;
             z-index: -1;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .hero-cta-group .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.1;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .hero-cta-group .hero-btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: #fff;
+            border: 1px solid transparent;
+        }
+
+        .hero-cta-group .hero-btn-outline {
+            background: transparent;
+            color: var(--accent-blue);
+            border: 1px solid var(--accent-blue);
         }
 
         .category-card {
@@ -83,6 +119,18 @@
             object-fit: cover;
             border: 3px solid var(--accent-blue);
             margin-bottom: 1rem;
+        }
+
+        .featured-talent-section .btn-outline-light {
+            color: var(--accent-blue);
+            border-color: var(--accent-blue);
+            background: transparent;
+        }
+
+        .featured-talent-section .btn-outline-light:hover {
+            color: #fff;
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
         }
 
         @media (max-width: 576px) {
@@ -153,8 +201,8 @@
                         branding with immersive storyteller aesthetics.
                     </p>
                     <div class="d-flex gap-3 float-delayed-2 hero-cta-group">
-                        <a href="pricing.html" class="btn btn-premium btn-primary-glow px-5">Start Production</a>
-                        <a href="demo-reels.html" class="btn btn-outline-info btn-premium px-5">Hear the Sound</a>
+                        <a href="pricing.html" class="btn hero-btn hero-btn-primary px-5">Start Production</a>
+                        <a href="demo-reels.html" class="btn hero-btn hero-btn-outline px-5">Hear the Sound</a>
                     </div>
                 </div>
                 <div class="col-lg-5 mt-4 mt-lg-0">
@@ -190,7 +238,7 @@
             </div>
             <div class="row g-4">
                 <!-- Commercial -->
-                <div class="col-md-4 col-lg-3">
+                <div class="col-md-6 col-lg-3">
                     <div class="category-card">
                         <i class="bi bi-megaphone category-icon"></i>
                         <h4>Commercial</h4>
@@ -198,7 +246,7 @@
                     </div>
                 </div>
                 <!-- Animation -->
-                <div class="col-md-4 col-lg-3">
+                <div class="col-md-6 col-lg-3">
                     <div class="category-card">
                         <i class="bi bi-palette category-icon"></i>
                         <h4>Animation</h4>
@@ -206,7 +254,7 @@
                     </div>
                 </div>
                 <!-- Gaming -->
-                <div class="col-md-4 col-lg-3">
+                <div class="col-md-6 col-lg-3">
                     <div class="category-card">
                         <i class="bi bi-controller category-icon"></i>
                         <h4>Video Games</h4>
@@ -214,7 +262,7 @@
                     </div>
                 </div>
                 <!-- Trailer -->
-                <div class="col-md-4 col-lg-3">
+                <div class="col-md-6 col-lg-3">
                     <div class="category-card">
                         <i class="bi bi-film category-icon"></i>
                         <h4>Trailers</h4>
@@ -226,7 +274,7 @@
     </section>
 
     <!-- Featured Talent Carousel -->
-    <section class="py-5 bg-darker">
+    <section class="py-5 bg-darker featured-talent-section">
         <div class="container">
             <div class="row align-items-center mb-5">
                 <div class="col-md-6">
@@ -237,37 +285,37 @@
                     <a href="demo-reels.html" class="btn btn-outline-info">View Full Roster</a>
                 </div>
             </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="studio-card text-center">
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="studio-card text-center h-100 d-flex flex-column">
                         <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop"
                             alt="Sarah J" class="talent-avatar">
                         <h4>Sarah Jenkins</h4>
                         <p class="text-info">Commercial • Animation</p>
                         <div id="talent-wf-1" class="waveform-container justify-content-center mb-3"></div>
-                        <button class="btn btn-sm btn-outline-light"><i class="bi bi-play-fill me-1"></i> Play
+                        <button class="btn btn-sm btn-outline-light mt-auto align-self-center"><i class="bi bi-play-fill me-1"></i> Play
                             Reel</button>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="studio-card text-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="studio-card text-center h-100 d-flex flex-column">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
                             alt="Marcus L" class="talent-avatar" style="border-color: var(--accent-purple);">
                         <h4>Marcus Lowe</h4>
                         <p class="text-info">Video Games • Trailers</p>
                         <div id="talent-wf-2" class="waveform-container justify-content-center mb-3"></div>
-                        <button class="btn btn-sm btn-outline-light"><i class="bi bi-play-fill me-1"></i> Play
+                        <button class="btn btn-sm btn-outline-light mt-auto align-self-center"><i class="bi bi-play-fill me-1"></i> Play
                             Reel</button>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="studio-card text-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="studio-card text-center h-100 d-flex flex-column">
                         <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
                             alt="Elena R" class="talent-avatar" style="border-color: var(--accent-gold);">
                         <h4>Elena Rodriguez</h4>
                         <p class="text-info">E-Learning • Corporate</p>
                         <div id="talent-wf-3" class="waveform-container justify-content-center mb-3"></div>
-                        <button class="btn btn-sm btn-outline-light"><i class="bi bi-play-fill me-1"></i> Play
+                        <button class="btn btn-sm btn-outline-light mt-auto align-self-center"><i class="bi bi-play-fill me-1"></i> Play
                             Reel</button>
                     </div>
                 </div>
@@ -463,4 +511,5 @@
 </body>
 
 </html>
+
 

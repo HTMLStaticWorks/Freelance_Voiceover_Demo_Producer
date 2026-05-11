@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+
     <style>
         .audio-reviewer-panel {
             background: var(--secondary-bg);
@@ -104,6 +106,27 @@
             border-bottom: 1px solid var(--glass-border);
             display: flex;
             gap: 15px;
+        }
+
+        @media (max-width: 991.98px) {
+            .dashboard-header {
+                position: relative;
+                padding-inline-end: 11rem;
+            }
+
+            .dashboard-header>div:last-child {
+                position: absolute;
+                top: 0;
+                inset-inline-end: 0;
+                margin: 0 !important;
+                width: auto !important;
+                justify-content: flex-end;
+                gap: 0.5rem !important;
+            }
+
+            .dashboard-header .user-profile-widget {
+                margin-inline-end: 0 !important;
+            }
         }
     </style>
 </head>
@@ -248,4 +271,5 @@
 </body>
 
 </html>
+
 
