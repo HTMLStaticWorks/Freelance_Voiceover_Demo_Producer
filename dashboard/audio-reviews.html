@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Reviews | VoiceFlow Studios</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        .audio-reviewer-panel {
+            background: var(--secondary-bg);
+            border-radius: 30px;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .main-waveform-display {
+            height: 250px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .comment-marker {
+            position: absolute;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--accent-gold);
+            cursor: pointer;
+        }
+
+        .comment-bubble {
+            position: absolute;
+            top: -40px;
+            background: var(--accent-gold);
+            color: black;
+            padding: 5px 10px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            white-space: nowrap;
+            transform: translateX(-50%);
+        }
+
+        .playback-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 2rem;
+            transition: var(--transition-smooth);
+        }
+
+        .control-btn:hover {
+            color: var(--accent-blue);
+            transform: scale(1.1);
+        }
+
+        .play-main {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: var(--neon-glow);
+        }
+
+        .comment-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .comment-item {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            gap: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+                        <div class="mb-5">
+                <a href="../index.html" class="navbar-brand brand-logo text-decoration-none"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></a>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item"><a href="dashboard.html" class="sidebar-link"><i class="bi bi-grid-fill"></i>
+                        Dashboard</a></li>
+                <li class="sidebar-item"><a href="my-projects.html" class="sidebar-link"><i
+                            class="bi bi-folder2-open"></i> My Projects</a></li>
+                <li class="sidebar-item"><a href="audio-reviews.html" class="sidebar-link active"><i
+                            class="bi bi-cassette"></i> Audio Reviews</a></li>
+                <li class="sidebar-item"><a href="downloads.html" class="sidebar-link"><i class="bi bi-download"></i>
+                        Downloads</a></li>
+                <li class="sidebar-item"><a href="messages.html" class="sidebar-link"><i class="bi bi-chat-dots"></i>
+                        Messages</a></li>
+                <li class="sidebar-divider py-3">
+                    <hr class="border-secondary opacity-25">
+                </li>
+                <li class="sidebar-item"><a href="billing.html" class="sidebar-link"><i class="bi bi-credit-card"></i>
+                        Billing</a></li>
+                <li class="sidebar-item"><a href="settings.html" class="sidebar-link"><i class="bi bi-gear"></i>
+                        Settings</a></li>
+                <li class="sidebar-item"><a href="../login.html" class="sidebar-link"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-1">
+                            <li class="breadcrumb-item small"><a href="my-projects.html" class="text-muted">Projects</a>
+                            </li>
+                            <li class="breadcrumb-item small active" aria-current="page">Commercial Reel 2026</li>
+                        </ol>
+                    </nav>
+                    <h2 class="mb-0">Audio Review Hub</h2>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="user-profile-widget me-3">
+                        <div class="text-end d-none d-md-block">
+                            <p class="mb-0 fw-bold">Alex</p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop"
+                            alt="User" class="user-avatar">
+                    </div>
+                    <button onclick="toggleTheme()" class="btn btn-outline-secondary rounded-circle">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
+                    <button onclick="toggleDirection()" class="btn btn-outline-secondary rounded-circle">
+                        <i class="bi bi-translate"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="audio-reviewer-panel">
+                        <div class="main-waveform-display" id="review-waveform">
+                            <!-- JS will inject large waveform -->
+                            <div class="comment-marker" style="left: 35%;">
+                                <div class="comment-bubble">00:12 - Needs more energy here</div>
+                            </div>
+                        </div>
+
+                        <div class="playback-controls">
+                            <button class="control-btn"><i class="bi bi-skip-start-fill"></i></button>
+                            <button class="control-btn play-main"><i class="bi bi-play-fill"></i></button>
+                            <button class="control-btn"><i class="bi bi-skip-end-fill"></i></button>
+                        </div>
+
+                        <div class="d-flex justify-content-between text-muted small mb-4">
+                            <span>0:15 / 0:30</span>
+                            <div class="d-flex gap-3">
+                                <span><i class="bi bi-volume-up me-1"></i> 80%</span>
+                                <span><i class="bi bi-speedometer2 me-1"></i> 1.0x</span>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <span class="input-group-text bg-transparent border-secondary text-white"><i
+                                    class="bi bi-chat-text"></i></span>
+                            <input type="text" class="form-control" placeholder="Add comment at 0:15...">
+                            <button class="btn btn-primary-glow">Post Note</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="studio-card h-100">
+                        <h4 class="mb-4">Revision History</h4>
+                        <div class="comment-list">
+                            <div class="comment-item">
+                                <div class="small fw-bold text-info">00:05</div>
+                                <div>
+                                    <p class="mb-1 small">"Can we lower the background music bed slightly before the
+                                        first line?"</p>
+                                    <small class="text-muted">Added by You • 2h ago</small>
+                                </div>
+                            </div>
+                            <div class="comment-item border-info border-start border-4">
+                                <div class="small fw-bold text-info">Producer Response</div>
+                                <div>
+                                    <p class="mb-1 small">"Adjusted music volume. Let me know if the balance feels
+                                        better now."</p>
+                                    <small class="text-muted">Added by Mark J • 1h ago</small>
+                                </div>
+                            </div>
+                            <div class="comment-item">
+                                <div class="small fw-bold text-info">00:12</div>
+                                <div>
+                                    <p class="mb-1 small">"Needs more energy here."</p>
+                                    <small class="text-muted">Added by You • 30m ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.createWaveform) {
+                createWaveform('review-waveform', 80);
+            }
+        });
+    </script>
+</body>
+
+</html>
+

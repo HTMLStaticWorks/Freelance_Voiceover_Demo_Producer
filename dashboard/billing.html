@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing | VoiceFlow Studios</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="mb-5">
+                <a href="../index.html" class="navbar-brand brand-logo text-decoration-none"><span
+                        class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span
+                        class="brand-logo-text">VOICEFLOW</span></a>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item"><a href="dashboard.html" class="sidebar-link"><i class="bi bi-grid-fill"></i>
+                        Dashboard</a></li>
+                <li class="sidebar-item"><a href="my-projects.html" class="sidebar-link"><i
+                            class="bi bi-folder2-open"></i> My Projects</a></li>
+                <li class="sidebar-item"><a href="audio-reviews.html" class="sidebar-link"><i
+                            class="bi bi-cassette"></i> Audio Reviews</a></li>
+                <li class="sidebar-item"><a href="downloads.html" class="sidebar-link"><i class="bi bi-download"></i>
+                        Downloads</a></li>
+                <li class="sidebar-item"><a href="messages.html" class="sidebar-link"><i class="bi bi-chat-dots"></i>
+                        Messages</a></li>
+                <li class="sidebar-divider py-3">
+                    <hr class="border-secondary opacity-25">
+                </li>
+                <li class="sidebar-item"><a href="billing.html" class="sidebar-link active"><i
+                            class="bi bi-credit-card"></i> Billing</a></li>
+                <li class="sidebar-item"><a href="settings.html" class="sidebar-link"><i class="bi bi-gear"></i>
+                        Settings</a></li>
+                <li class="sidebar-item"><a href="../login.html" class="sidebar-link"><i
+                            class="bi bi-box-arrow-right"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div>
+                    <h2 class="mb-0">Billing & Invoices</h2>
+                    <p class="text-muted">Manage your subscriptions and production payments.</p>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="user-profile-widget me-3">
+                        <div class="text-end d-none d-md-block">
+                            <p class="mb-0 fw-bold">Alex</p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop"
+                            alt="User" class="user-avatar">
+                    </div>
+                    <button onclick="toggleTheme()" class="btn btn-outline-secondary rounded-circle">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
+                    <button onclick="toggleDirection()" class="btn btn-outline-secondary rounded-circle">
+                        <i class="bi bi-translate"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4">
+                    <div class="studio-card h-100">
+                        <p class="text-muted small mb-1">Current Balance</p>
+                        <h2 class="mb-4">$450.00</h2>
+                        <button class="btn btn-premium btn-primary-glow btn-sm w-100">Make Payment</button>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="studio-card h-100">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="mb-0">Saved Methods</h5>
+                            <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-plus"></i> Add</button>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 p-3 glass-panel rounded-3">
+                            <i class="bi bi-credit-card-2-front fs-3"></i>
+                            <div class="flex-grow-1">
+                                <p class="mb-0 fw-bold">•••• •••• •••• 4242</p>
+                                <small class="text-muted">Expires 12/28</small>
+                            </div>
+                            <span class="badge bg-info">Primary</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="studio-card p-0 overflow-hidden">
+                <div class="p-4 border-bottom border-secondary border-opacity-25">
+                    <h5 class="mb-0">Invoice History</h5>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-dark table-hover mb-0">
+                        <thead>
+                            <tr>
+                                <th class="ps-4">ID</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th class="text-end pe-4">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ps-4" data-label="ID">INV-0128</td>
+                                <td data-label="Date">May 01, 2026</td>
+                                <td data-label="Amount">$899.00</td>
+                                <td data-label="Status"><span class="badge bg-success">Paid</span></td>
+                                <td data-label="Action" class="text-end pe-4"><button
+                                        class="btn btn-sm btn-link text-info"><i class="bi bi-file-earmark-pdf"></i>
+                                        PDF</button></td>
+                            </tr>
+                            <tr>
+                                <td class="ps-4" data-label="ID">INV-0125</td>
+                                <td data-label="Date">April 12, 2026</td>
+                                <td data-label="Amount">$499.00</td>
+                                <td data-label="Status"><span class="badge bg-success">Paid</span></td>
+                                <td data-label="Action" class="text-end pe-4"><button
+                                        class="btn btn-sm btn-link text-info"><i class="bi bi-file-earmark-pdf"></i>
+                                        PDF</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

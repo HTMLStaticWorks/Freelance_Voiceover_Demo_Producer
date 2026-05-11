@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings | VoiceFlow Studios</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+                        <div class="mb-5">
+                <a href="../index.html" class="navbar-brand brand-logo text-decoration-none"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></a>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item"><a href="dashboard.html" class="sidebar-link"><i class="bi bi-grid-fill"></i>
+                        Dashboard</a></li>
+                <li class="sidebar-item"><a href="my-projects.html" class="sidebar-link"><i
+                            class="bi bi-folder2-open"></i> My Projects</a></li>
+                <li class="sidebar-item"><a href="audio-reviews.html" class="sidebar-link"><i
+                            class="bi bi-cassette"></i> Audio Reviews</a></li>
+                <li class="sidebar-item"><a href="downloads.html" class="sidebar-link"><i class="bi bi-download"></i>
+                        Downloads</a></li>
+                <li class="sidebar-item"><a href="messages.html" class="sidebar-link"><i class="bi bi-chat-dots"></i>
+                        Messages</a></li>
+                <li class="sidebar-divider py-3">
+                    <hr class="border-secondary opacity-25">
+                </li>
+                <li class="sidebar-item"><a href="billing.html" class="sidebar-link"><i class="bi bi-credit-card"></i>
+                        Billing</a></li>
+                <li class="sidebar-item"><a href="settings.html" class="sidebar-link active"><i class="bi bi-gear"></i>
+                        Settings</a></li>
+                <li class="sidebar-item"><a href="../login.html" class="sidebar-link"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div>
+                    <h2 class="mb-0">Settings</h2>
+                    <p class="text-muted">Configure your platform experience and preferences.</p>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="user-profile-widget me-3">
+                        <div class="text-end d-none d-md-block">
+                            <p class="mb-0 fw-bold">Alex</p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop"
+                            alt="User" class="user-avatar">
+                    </div>
+                    <button onclick="toggleTheme()" class="btn btn-outline-secondary rounded-circle">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
+                    <button onclick="toggleDirection()" class="btn btn-outline-secondary rounded-circle">
+                        <i class="bi bi-translate"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="studio-card mb-4">
+                        <h5 class="mb-4">Appearance</h5>
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <h6 class="mb-0">Theme Mode</h6>
+                                <p class="text-muted small mb-0">Switch between Studio Dark and Creative Light.</p>
+                            </div>
+                            <button onclick="toggleTheme()" class="btn btn-outline-info btn-sm">Toggle Theme</button>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="mb-0">Layout Direction</h6>
+                                <p class="text-muted small mb-0">Force RTL/LTR mirroring globally.</p>
+                            </div>
+                            <button onclick="toggleDirection()" class="btn btn-outline-info btn-sm">Toggle
+                                Mirror</button>
+                        </div>
+                    </div>
+
+                    <div class="studio-card">
+                        <h5 class="mb-4">Notifications</h5>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" checked>
+                            <label class="form-check-label">Email notification on new masters</label>
+                        </div>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" checked>
+                            <label class="form-check-label">In-app message alerts</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox">
+                            <label class="form-check-label">Weekly production digest</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="studio-card mb-4">
+                        <h5 class="mb-4">Security</h5>
+                        <div class="mb-3">
+                            <label class="form-label small text-muted">Current Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control bg-dark border-secondary text-white"
+                                    value="••••••••">
+                                <span class="input-group-text bg-transparent border-secondary text-muted"><i
+                                        class="bi bi-eye"></i></span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label small text-muted">New Password</label>
+                            <input type="password" class="form-control bg-dark border-secondary text-white">
+                        </div>
+                        <button class="btn btn-outline-info btn-sm">Update Password</button>
+                    </div>
+
+                    <div class="studio-card border-danger border-opacity-25">
+                        <h5 class="text-danger mb-4">Danger Zone</h5>
+                        <p class="small text-muted mb-4">Permanently delete your account and all production files. This
+                            action cannot be undone.</p>
+                        <button class="btn btn-outline-danger btn-sm">Delete Account</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoiceFlow Studios | Premium Home 2</title>
+    <meta name="description"
+        content="Cinematic voiceover demo production for professional voice actors. Alternative homepage layout.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .hero-section-2 {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding-top: var(--navbar-height);
+            overflow: hidden;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(139, 92, 246, 0.1), transparent 70%);
+        }
+
+        .hero-glow-2 {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(58, 190, 255, 0.1) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .showcase-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 3rem;
+            margin-top: -100px;
+            z-index: 10;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .stat-item h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial-card {
+            background: var(--secondary-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            height: 100%;
+            transition: var(--transition-smooth);
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-10px);
+        }
+
+        .quote-icon {
+            font-size: 2.5rem;
+            color: var(--glass-border);
+            margin-bottom: 1rem;
+        }
+
+        .home2-block {
+            margin-top: 5rem;
+        }
+
+        .process-card,
+        .package-card,
+        .cta-panel {
+            background: var(--secondary-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            height: 100%;
+            transition: var(--transition-smooth);
+        }
+
+        .process-card:hover,
+        .package-card:hover,
+        .cta-panel:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-blue);
+        }
+
+        .process-step {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .package-badge {
+            font-size: 0.8rem;
+            background: rgba(58, 190, 255, 0.12);
+            border: 1px solid rgba(58, 190, 255, 0.4);
+            color: var(--accent-blue);
+            border-radius: 999px;
+            padding: 0.35rem 0.8rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .package-price {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .package-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        .metric-tile {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 767px) {
+            .home2-block {
+                margin-top: 3.5rem;
+            }
+
+            .process-card,
+            .package-card,
+            .cta-panel {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Particles Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand brand-logo text-decoration-none" href="index.html"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="home2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard/dashboard.html">Dashboard</a></li>
+                    <li class="nav-item ms-lg-3"><a href="login.html" class="btn btn-primary-glow btn-sm px-3 nav-login-btn">Login</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <div class="d-flex align-items-center gap-2">
+                            <button onclick="toggleTheme()" class="btn btn-dark rounded-circle btn-sm">
+                                <i class="bi bi-moon-stars"></i>
+                            </button>
+                            <button onclick="toggleDirection()" class="btn btn-dark rounded-circle btn-sm">
+                                <i class="bi bi-translate"></i>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section 2 (Centered Content) -->
+    <section class="hero-section-2">
+        <div class="hero-glow-2"></div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 text-center">
+                    <span class="badge bg-info text-dark rounded-pill px-4 py-2 mb-4 antigravity-float">Voted #1 Studio
+                        2026</span>
+                    <h1 class="display-1 fw-bold mb-4 antigravity-float">
+                        Sonically Engineered <br><span class="text-info">Excellence.</span>
+                    </h1>
+                    <p class="lead text-muted mb-5 float-delayed-1 mx-auto" style="max-width: 700px;">
+                        The industry's most advanced voiceover demo production suite. Cinematic sound design meets
+                        award-winning creative direction to propel your career into the stratosphere.
+                    </p>
+                    <div class="d-flex gap-3 justify-content-center float-delayed-2 hero2-cta-group">
+                        <a href="pricing.html" class="btn btn-premium btn-primary-glow px-5">View Our Tiers</a>
+                        <a href="demo-reels.html" class="btn btn-outline-info btn-premium px-5">Explore Masters</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Experience Section -->
+    <section class="py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="display-5 mb-4">The Immortal <span class="text-info">Frequency</span></h2>
+                    <p class="text-muted lead mb-4">Our proprietary 'Sonic Lift' technology ensures your voice cuts
+                        through every board-mix, every commercial bed, and every trailer score with absolute clarity.
+                    </p>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-info me-2"></i> Custom-written scripts
+                            tailored to your range</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-info me-2"></i> World-class sound
+                            effects library (100k+ sounds)</li>
+                        <li class="mb-3"><i class="bi bi-check-circle-fill text-info me-2"></i> Dolby Atmos spatial
+                            mixing availability</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="glass-panel p-5">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="mb-0">Demo Player v4.0</h5>
+                            <i class="bi bi-waveform text-info"></i>
+                        </div>
+                        <div id="demo-waveform" class="waveform-container mb-4" style="height: 100px;"></div>
+                        <div class="d-flex align-items-center gap-3">
+                            <button class="btn btn-primary-glow rounded-circle p-3"><i
+                                    class="bi bi-play-fill fs-4"></i></button>
+                            <div class="flex-grow-1">
+                                <h6 class="mb-1">Sarah Jenkins - Commercial Reel</h6>
+                                <div class="progress bg-dark" style="height: 4px;">
+                                    <div class="progress-bar bg-info" style="width: 45%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 mt-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 mb-3">Industry Talk</h2>
+                <p class="text-muted">What the world's top talent is saying about VoiceFlow.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <i class="bi bi-quote quote-icon"></i>
+                        <p class="mb-4">"My booking rate tripled within three months of switching my main reel to a
+                            VoiceFlow production. The sonic quality is unmatched."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100"
+                                class="rounded-circle me-3" style="width: 50px; height: 50px;">
+                            <div>
+                                <h6 class="mb-0">Sarah Jenkins</h6>
+                                <small class="text-info">VO Artist, Disney+</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <i class="bi bi-quote quote-icon"></i>
+                        <p class="mb-4">"They don't just engineer; they direct. I left my session with a better
+                            understanding of my own vocal range than ever before."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100"
+                                class="rounded-circle me-3" style="width: 50px; height: 50px;">
+                            <div>
+                                <h6 class="mb-0">Marcus Lowe</h6>
+                                <small class="text-info">Trailer Talent, Lionsgate</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="testimonial-card">
+                        <i class="bi bi-quote quote-icon"></i>
+                        <p class="mb-4">"The Dashboard communication with producers was seamless. V1 was already 99%
+                            perfect, and V2 nailed the Atmos mix."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100"
+                                class="rounded-circle me-3" style="width: 50px; height: 50px;">
+                            <div>
+                                <h6 class="mb-0">Elena Rodriguez</h6>
+                                <small class="text-info">Corporate VO, Microsoft</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow -->
+    <section class="home2-block">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 mb-3">How We Build Your Reel</h2>
+                <p class="text-muted mb-0">Three clean stages from strategy to delivery.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="process-card">
+                        <span class="process-step">1</span>
+                        <h5 class="mb-3">Vocal Strategy Call</h5>
+                        <p class="text-muted mb-0">We map your market goals, signature tone, and category targets
+                            before a single line is written.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="process-card">
+                        <span class="process-step">2</span>
+                        <h5 class="mb-3">Directed Recording Session</h5>
+                        <p class="text-muted mb-0">Live producer direction helps you land stronger performances in
+                            fewer takes, with pacing tuned for casting trends.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mx-md-auto mx-lg-0">
+                    <div class="process-card">
+                        <span class="process-step">3</span>
+                        <h5 class="mb-3">Cinematic Post + Delivery</h5>
+                        <p class="text-muted mb-0">We finalize edits, processing, and music/sfx layering, then deliver
+                            mastered files ready for agencies and online casting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages -->
+    <section class="home2-block">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 mb-3">Choose Your Production Track</h2>
+                <p class="text-muted mb-0">Built for every stage of a voice actor's growth.</p>
+            </div>
+            <div class="row g-4 align-items-stretch">
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card">
+                        <span class="package-badge">Starter</span>
+                        <h5>Launch Reel</h5>
+                        <div class="package-price">$699</div>
+                        <ul class="list-unstyled package-list text-muted">
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>2 directed scripts</li>
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>Standard mix + master</li>
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>7-day delivery</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="package-card">
+                        <span class="package-badge">Most Popular</span>
+                        <h5>Signature Reel</h5>
+                        <div class="package-price">$1,299</div>
+                        <ul class="list-unstyled package-list text-muted">
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>4 directed scripts</li>
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>Advanced sound design</li>
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>3-day delivery</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="package-card">
+                        <span class="package-badge">Elite</span>
+                        <h5>Agency Apex Reel</h5>
+                        <div class="package-price">$2,490</div>
+                        <ul class="list-unstyled package-list text-muted">
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>6 directed scripts</li>
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>Atmos-ready master chain</li>
+                            <li><i class="bi bi-check-circle-fill text-info me-2"></i>48-hour priority delivery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking CTA -->
+    <section class="home2-block">
+        <div class="container">
+            <div class="cta-panel">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-7">
+                        <h2 class="display-6 mb-3">Ready to Book Your Next Demo?</h2>
+                        <p class="text-muted mb-4">Reserve a strategy call and get a same-day roadmap with scripts,
+                            timeline, and recommendation for your current market tier.</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="contact.html" class="btn btn-premium btn-primary-glow px-4">Book Free Call</a>
+                            <a href="pricing.html" class="btn btn-outline-info btn-premium px-4">Compare Full Pricing</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div class="metric-tile">
+                                    <h4 class="mb-1 text-info">24h</h4>
+                                    <small class="text-muted">First response time</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="metric-tile">
+                                    <h4 class="mb-1 text-info">98%</h4>
+                                    <small class="text-muted">Repeat clients</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="metric-tile">
+                                    <h4 class="mb-1 text-info">12k+</h4>
+                                    <small class="text-muted">Demos produced</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="metric-tile">
+                                    <h4 class="mb-1 text-info">450+</h4>
+                                    <small class="text-muted">Agency signings</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+        <footer class="py-5 mt-5 glass-panel rounded-0">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="brand-logo mb-4"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></h3>
+                    <p class="text-muted pe-lg-5">The ultimate destination for premium voiceover demo production and
+                        sonic branding. We turn talent into icons.</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h5>Studio</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li><a href="about.html" class="text-decoration-none text-reset">About Us</a></li>
+                        <li><a href="services.html" class="text-decoration-none text-reset">Our Services</a></li>
+                        <li><a href="demo-reels.html" class="text-decoration-none text-reset">Portfolio</a></li>
+                        <li><a href="blog.html" class="text-decoration-none text-reset">Studio Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h5>Categories</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li><a href="#" class="text-decoration-none text-reset">Commercial</a></li>
+                        <li><a href="#" class="text-decoration-none text-reset">Animation</a></li>
+                        <li><a href="#" class="text-decoration-none text-reset">Gaming</a></li>
+                        <li><a href="#" class="text-decoration-none text-reset">Narration</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Newsletter</h5>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control bg-transparent border-secondary text-white"
+                            placeholder="Email">
+                        <button class="btn btn-primary-glow"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-info fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-info fs-5"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-info fs-5"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 border-secondary">
+            <div class="d-flex justify-content-between align-items-center small text-muted footer-bottom-row">
+                <p class="mb-0">&copy; 2026 VoiceFlow Studios. All rights reserved.</p>
+                <div class="d-flex gap-4 footer-bottom-links">
+                    <a href="#" class="text-reset text-decoration-none">Privacy Policy</a>
+                    <a href="#" class="text-reset text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.createWaveform) {
+                createWaveform('demo-waveform', 40);
+            }
+        });
+    </script>
+</body>
+
+</html>
+

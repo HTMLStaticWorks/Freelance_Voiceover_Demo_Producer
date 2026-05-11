@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoiceFlow Studios | Premium Voiceover Demo Production</title>
+    <meta name="description"
+        content="Cinematic voiceover demo production for professional voice actors. Experience industry-standard engineering and creative direction.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: var(--navbar-height);
+            overflow: hidden;
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(58, 190, 255, 0.15) 0%, transparent 70%);
+            top: -100px;
+            inset-inline-end: -100px;
+            z-index: -1;
+        }
+
+        .hero-waveform {
+            position: absolute;
+            bottom: 50px;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .category-card {
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 2.5rem;
+            height: 100%;
+            transition: var(--transition-smooth);
+            background: rgba(255, 255, 255, 0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--accent-blue);
+            box-shadow: var(--neon-glow);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .talent-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 576px) {
+            .footer-bottom-row {
+                flex-direction: column;
+                align-items: flex-start !important;
+                gap: 0.75rem;
+            }
+
+            .footer-bottom-links {
+                flex-wrap: wrap;
+                gap: 0.5rem 1rem !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Particles Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand brand-logo text-decoration-none" href="index.html"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard/dashboard.html">Dashboard</a></li>
+                    <li class="nav-item ms-lg-3"><a href="login.html" class="btn btn-primary-glow btn-sm px-3 nav-login-btn">Login</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <div class="d-flex align-items-center gap-2">
+                            <button onclick="toggleTheme()" class="btn btn-dark rounded-circle btn-sm">
+                                <i class="bi bi-moon-stars"></i>
+                            </button>
+                            <button onclick="toggleDirection()" class="btn btn-dark rounded-circle btn-sm">
+                                <i class="bi bi-translate"></i>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-glow"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="display-2 fw-bold mb-4 antigravity-float">
+                        Your Voice Deserves A <span class="text-info">Cinematic</span> Identity.
+                    </h1>
+                    <p class="lead text-muted mb-5 float-delayed-1" style="max-width: 600px;">
+                        Transform your raw potential into industry-shattering demo reels. We combine world-class audio
+                        branding with immersive storyteller aesthetics.
+                    </p>
+                    <div class="d-flex gap-3 float-delayed-2 hero-cta-group">
+                        <a href="pricing.html" class="btn btn-premium btn-primary-glow px-5">Start Production</a>
+                        <a href="demo-reels.html" class="btn btn-outline-info btn-premium px-5">Hear the Sound</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 mt-4 mt-lg-0">
+                    <div class="glass-panel p-4 antigravity-float float-delayed-3">
+                        <div class="d-flex align-items-center mb-4">
+                            <i class="bi bi-soundwave fs-1 text-info me-3"></i>
+                            <div>
+                                <h5 class="mb-0">Live Frequency Analyser</h5>
+                                <small class="text-muted">Broadcast Quality Master</small>
+                            </div>
+                        </div>
+                        <div id="hero-waveform" class="waveform-container mb-4">
+                            <!-- JS will inject bars here -->
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="badge bg-primary">96kHz / 24-bit</span>
+                            <span class="text-success small"><i class="bi bi-record-circle me-1"></i> Studio
+                                Active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-waveform" id="bg-waveform"></div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 mb-3">Master Every Genre</h2>
+                <p class="text-muted">Specialized production for every corner of the voice industry.</p>
+            </div>
+            <div class="row g-4">
+                <!-- Commercial -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="category-card">
+                        <i class="bi bi-megaphone category-icon"></i>
+                        <h4>Commercial</h4>
+                        <p class="text-muted small">High-energy spots for global brands.</p>
+                    </div>
+                </div>
+                <!-- Animation -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="category-card">
+                        <i class="bi bi-palette category-icon"></i>
+                        <h4>Animation</h4>
+                        <p class="text-muted small">Character-driven storytelling reels.</p>
+                    </div>
+                </div>
+                <!-- Gaming -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="category-card">
+                        <i class="bi bi-controller category-icon"></i>
+                        <h4>Video Games</h4>
+                        <p class="text-muted small">Immersive voices for the next AAA hit.</p>
+                    </div>
+                </div>
+                <!-- Trailer -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="category-card">
+                        <i class="bi bi-film category-icon"></i>
+                        <h4>Trailers</h4>
+                        <p class="text-muted small">Epic cinematic narration and grit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Talent Carousel -->
+    <section class="py-5 bg-darker">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6">
+                    <h2 class="display-6">Featured Talent</h2>
+                    <p class="text-muted">Voices currently dominating the airwaves.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="demo-reels.html" class="btn btn-outline-info">View Full Roster</a>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="studio-card text-center">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop"
+                            alt="Sarah J" class="talent-avatar">
+                        <h4>Sarah Jenkins</h4>
+                        <p class="text-info">Commercial • Animation</p>
+                        <div id="talent-wf-1" class="waveform-container justify-content-center mb-3"></div>
+                        <button class="btn btn-sm btn-outline-light"><i class="bi bi-play-fill me-1"></i> Play
+                            Reel</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="studio-card text-center">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+                            alt="Marcus L" class="talent-avatar" style="border-color: var(--accent-purple);">
+                        <h4>Marcus Lowe</h4>
+                        <p class="text-info">Video Games • Trailers</p>
+                        <div id="talent-wf-2" class="waveform-container justify-content-center mb-3"></div>
+                        <button class="btn btn-sm btn-outline-light"><i class="bi bi-play-fill me-1"></i> Play
+                            Reel</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="studio-card text-center">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
+                            alt="Elena R" class="talent-avatar" style="border-color: var(--accent-gold);">
+                        <h4>Elena Rodriguez</h4>
+                        <p class="text-info">E-Learning • Corporate</p>
+                        <div id="talent-wf-3" class="waveform-container justify-content-center mb-3"></div>
+                        <button class="btn btn-sm btn-outline-light"><i class="bi bi-play-fill me-1"></i> Play
+                            Reel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Production Workflow -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 mb-3">Our Sonic <span class="text-info">Process</span></h2>
+                <p class="text-muted">A cinematic journey from raw voice to industry-standard master.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="glass-panel p-4 h-100 text-center">
+                        <div class="mb-4 d-inline-block p-3 rounded-circle bg-info bg-opacity-10">
+                            <i class="bi bi-search fs-2 text-info"></i>
+                        </div>
+                        <h3>01. Discovery</h3>
+                        <p class="text-muted">We analyze your range, tone, and goals to select scripts that showcase
+                            your absolute best performance.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="glass-panel p-4 h-100 text-center">
+                        <div class="mb-4 d-inline-block p-3 rounded-circle"
+                            style="background: rgba(139, 92, 246, 0.1);">
+                            <i class="bi bi-mic fs-2" style="color: var(--accent-purple);"></i>
+                        </div>
+                        <h3>02. Engineering</h3>
+                        <p class="text-muted">Direct recording sessions with elite engineers using the world's most
+                            sought-after signal chains.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="glass-panel p-4 h-100 text-center">
+                        <div class="mb-4 d-inline-block p-3 rounded-circle"
+                            style="background: rgba(245, 185, 66, 0.1);">
+                            <i class="bi bi-stars fs-2" style="color: var(--accent-gold);"></i>
+                        </div>
+                        <h3>03. Polishing</h3>
+                        <p class="text-muted">Cinematic sound design and spatial mixing that makes your voice feel
+                            larger than life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Studio Arsenal -->
+    <section class="py-5 bg-darker overflow-hidden">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <h2 class="display-4 mb-4">The <span class="text-info">Arsenal</span> Behind the Sound</h2>
+                    <p class="lead text-muted mb-4">We don't settle for "good enough". Our studio is equipped with the
+                        finest analogue and digital tools in the industry.</p>
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-check2-circle text-info fs-4 me-2"></i>
+                                <span>Neumann U87 Ai</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-check2-circle text-info fs-4 me-2"></i>
+                                <span>Manley Voxbox</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-check2-circle text-info fs-4 me-2"></i>
+                                <span>Universal Audio 1176</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-check2-circle text-info fs-4 me-2"></i>
+                                <span>Avalon VT-737sp</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="position-relative d-inline-block">
+                        <img src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=800&fit=crop"
+                            alt="Studio Gear" class="img-fluid rounded-4 shadow-lg antigravity-float">
+                        <div
+                            class="glass-panel p-3 position-absolute bottom-0 start-0 m-4 antigravity-float float-delayed-2 d-none d-md-block">
+                            <h5 class="mb-0">96kHz Processing</h5>
+                            <small class="text-muted">Zero-latency monitoring</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Sonic Impact (Stats) -->
+    <section class="py-5">
+        <div class="container">
+            <div class="glass-panel p-5">
+                <div class="row g-4 text-center align-items-center">
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h2 class="display-3 fw-bold text-info mb-0">98%</h2>
+                            <p class="text-muted text-uppercase small ls-1">Cast Success Rate</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 border-md-start border-md-end border-secondary border-opacity-25">
+                        <div class="p-3">
+                            <h2 class="display-3 fw-bold mb-0" style="color: var(--accent-purple);">15+</h2>
+                            <p class="text-muted text-uppercase small ls-1">Industry Awards</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3">
+                            <h2 class="display-3 fw-bold mb-0" style="color: var(--accent-gold);">5k+</h2>
+                            <p class="text-muted text-uppercase small ls-1">Demos Delivered</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5 mt-5 glass-panel rounded-0">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="brand-logo mb-4"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></h3>
+                    <p class="text-muted pe-lg-5">The ultimate destination for premium voiceover demo production and
+                        sonic branding. We turn talent into icons.</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h5>Studio</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li><a href="about.html" class="text-decoration-none text-reset">About Us</a></li>
+                        <li><a href="services.html" class="text-decoration-none text-reset">Our Services</a></li>
+                        <li><a href="demo-reels.html" class="text-decoration-none text-reset">Portfolio</a></li>
+                        <li><a href="blog.html" class="text-decoration-none text-reset">Studio Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h5>Categories</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li><a href="#" class="text-decoration-none text-reset">Commercial</a></li>
+                        <li><a href="#" class="text-decoration-none text-reset">Animation</a></li>
+                        <li><a href="#" class="text-decoration-none text-reset">Gaming</a></li>
+                        <li><a href="#" class="text-decoration-none text-reset">Narration</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Newsletter</h5>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control bg-transparent border-secondary text-white"
+                            placeholder="Email">
+                        <button class="btn btn-primary-glow"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-info fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-info fs-5"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-info fs-5"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 border-secondary">
+            <div class="d-flex justify-content-between align-items-center small text-muted footer-bottom-row">
+                <p class="mb-0">&copy; 2026 VoiceFlow Studios. All rights reserved.</p>
+                <div class="d-flex gap-4 footer-bottom-links">
+                    <a href="#" class="text-reset text-decoration-none">Privacy Policy</a>
+                    <a href="#" class="text-reset text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            createWaveform('hero-waveform', 30);
+            createWaveform('talent-wf-1', 15);
+            createWaveform('talent-wf-2', 15);
+            createWaveform('talent-wf-3', 15);
+        });
+    </script>
+</body>
+
+</html>
+

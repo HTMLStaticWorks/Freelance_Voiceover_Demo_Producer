@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages | VoiceFlow Studios</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        .chat-container {
+            height: 600px;
+            display: flex;
+            background: var(--secondary-bg);
+            border-radius: 25px;
+            border: 1px solid var(--glass-border);
+            overflow: hidden;
+        }
+
+        .chat-sidebar {
+            width: 300px;
+            border-inline-end: 1px solid var(--glass-border);
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-bubbles {
+            flex-grow: 1;
+            padding: 2rem;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        .bubble {
+            max-width: 70%;
+            padding: 12px 20px;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .bubble-in {
+            background: var(--glass-bg);
+            margin-inline-end: auto;
+            border-bottom-left-radius: 2px;
+        }
+
+        .bubble-out {
+            background: var(--accent-blue);
+            color: white;
+            margin-inline-start: auto;
+            border-bottom-right-radius: 2px;
+        }
+
+        .chat-input-area {
+            padding: 1.5rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .contact-item {
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .contact-item:hover,
+        .contact-item.active {
+            background: var(--glass-bg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+                        <div class="mb-5">
+                <a href="../index.html" class="navbar-brand brand-logo text-decoration-none"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></a>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item"><a href="dashboard.html" class="sidebar-link"><i class="bi bi-grid-fill"></i>
+                        Dashboard</a></li>
+                <li class="sidebar-item"><a href="my-projects.html" class="sidebar-link"><i
+                            class="bi bi-folder2-open"></i> My Projects</a></li>
+                <li class="sidebar-item"><a href="audio-reviews.html" class="sidebar-link"><i
+                            class="bi bi-cassette"></i> Audio Reviews</a></li>
+                <li class="sidebar-item"><a href="downloads.html" class="sidebar-link"><i class="bi bi-download"></i>
+                        Downloads</a></li>
+                <li class="sidebar-item"><a href="messages.html" class="sidebar-link active"><i
+                            class="bi bi-chat-dots"></i> Messages</a></li>
+                <li class="sidebar-divider py-3">
+                    <hr class="border-secondary opacity-25">
+                </li>
+                <li class="sidebar-item"><a href="billing.html" class="sidebar-link"><i class="bi bi-credit-card"></i>
+                        Billing</a></li>
+                <li class="sidebar-item"><a href="settings.html" class="sidebar-link"><i class="bi bi-gear"></i>
+                        Settings</a></li>
+                <li class="sidebar-item"><a href="../login.html" class="sidebar-link"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <div>
+                    <h2 class="mb-0">Studio Chat</h2>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="user-profile-widget me-3">
+                        <div class="text-end d-none d-md-block">
+                            <p class="mb-0 fw-bold">Alex</p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop"
+                            alt="User" class="user-avatar">
+                    </div>
+                    <button onclick="toggleTheme()" class="btn btn-outline-secondary rounded-circle">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
+                    <button onclick="toggleDirection()" class="btn btn-outline-secondary rounded-circle">
+                        <i class="bi bi-translate"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="chat-container">
+                <div class="chat-sidebar">
+                    <div class="p-3 border-bottom border-secondary border-opacity-10">
+                        <input type="text" class="form-control bg-dark border-0 text-white small"
+                            placeholder="Search producers...">
+                    </div>
+                    <div class="contact-item active">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&h=50&fit=crop"
+                                class="rounded-circle" style="width: 40px; height: 40px;">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0 small">Mark Jensen</h6>
+                                <p class="mb-0 text-muted xx-small">Latest master is ready!</p>
+                            </div>
+                            <span class="badge bg-info rounded-pill" style="font-size: 0.6rem;">2</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="d-flex align-items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop"
+                                class="rounded-circle" style="width: 40px; height: 40px;">
+                            <div class="flex-grow-1">
+                                <h6 class="mb-0 small">Elena Rossi</h6>
+                                <p class="mb-0 text-muted xx-small">Sent script notes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-main">
+                    <div class="p-3 border-bottom border-secondary border-opacity-10 d-flex align-items-center gap-3">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=50&h=50&fit=crop"
+                            class="rounded-circle" style="width: 35px; height: 35px;">
+                        <h6 class="mb-0">Mark Jensen (Producer)</h6>
+                    </div>
+
+                    <div class="chat-bubbles">
+                        <div class="bubble bubble-in">
+                            Hey Alex, I just uploaded the V2 master for the Lexus spot. Lowered the music bed at 0:05 as
+                            requested.
+                            <small class="d-block text-muted mt-2 text-end" style="font-size: 0.6rem;">10:24 AM</small>
+                        </div>
+                        <div class="bubble bubble-out">
+                            Awesome, checking it now. The waveform looks much cleaner on the review page.
+                            <small class="d-block text-white-50 mt-2 text-end" style="font-size: 0.6rem;">10:26
+                                AM</small>
+                        </div>
+                        <div class="bubble bubble-in">
+                            Great! Let me know if we can move to the SFX layering stage next.
+                            <small class="d-block text-muted mt-2 text-end" style="font-size: 0.6rem;">10:28 AM</small>
+                        </div>
+                    </div>
+
+                    <div class="chat-input-area">
+                        <div class="input-group">
+                            <button class="btn btn-outline-secondary"><i class="bi bi-plus-lg"></i></button>
+                            <input type="text" class="form-control" placeholder="Type your message...">
+                            <button class="btn btn-primary-glow px-4"><i class="bi bi-send-fill"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script Direction | VoiceFlow Studios</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <style>
+        .script-editor {
+            background: #0D1117;
+            border-radius: 20px;
+            padding: 2.5rem;
+            min-height: 500px;
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 1.8;
+            color: #E6EDF3;
+            border: 1px solid var(--glass-border);
+        }
+
+        .direction-note {
+            background: rgba(139, 92, 246, 0.1);
+            border-left: 4px solid var(--accent-purple);
+            padding: 10px 15px;
+            margin: 15px 0;
+            font-family: 'Outfit', sans-serif;
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .script-toolbar {
+            background: var(--secondary-bg);
+            padding: 10px 20px;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 15px;
+        }
+
+        .pronunciation-badge {
+            background: var(--accent-gold);
+            color: black;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="../index.html" class="sidebar-logo text-decoration-none">VOICEFLOW</a>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item"><a href="dashboard.html" class="sidebar-link"><i class="bi bi-grid-fill"></i>
+                        Dashboard</a></li>
+                <li class="sidebar-item"><a href="my-projects.html" class="sidebar-link"><i
+                            class="bi bi-folder2-open"></i> My Projects</a></li>
+                <li class="sidebar-item"><a href="audio-reviews.html" class="sidebar-link"><i
+                            class="bi bi-cassette"></i> Audio Reviews</a></li>
+                <li class="sidebar-item"><a href="downloads.html" class="sidebar-link"><i class="bi bi-download"></i>
+                        Downloads</a></li>
+                <li class="sidebar-item"><a href="messages.html" class="sidebar-link"><i class="bi bi-chat-dots"></i>
+                        Messages</a></li>
+                <li class="sidebar-divider py-3">
+                    <hr class="border-secondary opacity-25">
+                </li>
+                <li class="sidebar-item"><a href="billing.html" class="sidebar-link"><i class="bi bi-credit-card"></i>
+                        Billing</a></li>
+                <li class="sidebar-item"><a href="settings.html" class="sidebar-link"><i class="bi bi-gear"></i>
+                        Settings</a></li>
+                <li class="sidebar-item"><a href="../login.html" class="sidebar-link"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="d-flex justify-content-between align-items-center mb-5">
+                <div>
+                    <h2 class="mb-0">Script Direction</h2>
+                    <p class="text-muted">Collaborative script refining and performance notes.</p>
+                </div>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-outline-info btn-sm"><i class="bi bi-cloud-arrow-up me-1"></i> Save
+                        Draft</button>
+                    <button class="btn btn-premium btn-primary-glow btn-sm">Finalize Script</button>
+                </div>
+            </header>
+
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="script-toolbar">
+                        <button class="btn btn-dark btn-sm"><i class="bi bi-type-bold"></i></button>
+                        <button class="btn btn-dark btn-sm"><i class="bi bi-type-italic"></i></button>
+                        <button class="btn btn-dark btn-sm"><i class="bi bi-list-task"></i> Direction Note</button>
+                        <div class="vr mx-2"></div>
+                        <button class="btn btn-dark btn-sm"><i class="bi bi-volume-up"></i> Pronunciation</button>
+                    </div>
+
+                    <div class="script-editor" contenteditable="true">
+                        [SCENE 01: THE CITYSCAPE]<br><br>
+                        (MUSIC: Low hybrid electronic drone)<br>
+                        CHAR: In this world, frequencies define everything.<br>
+                        <div class="direction-note">Producer: Keep it hushed, whispered. Let the air out on
+                            "frequencies".</div>
+                        CHAR: But silence? Silence is where the real power lies.<br><br>
+                        [SCENE 02: THE AWAKENING]<br><br>
+                        (SFX: Sharp digital glitch)<br>
+                        CHAR: Wake up, Neo. The <span class="pronunciation-badge">SYNA-CORE</span> (Sigh-Nah-Core) is
+                        offline.
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="studio-card mb-4">
+                        <h4 class="mb-3">Global Notes</h4>
+                        <p class="small text-muted mb-3">Elena R. (Creative Lead):</p>
+                        <div class="p-3 glass-panel rounded-3 mb-3">
+                            <p class="small mb-0">"We want a hybrid feel—part human, part machine. Avoid being too
+                                'robotic'. Think organic technology."</p>
+                        </div>
+                        <p class="small text-muted mb-0">Pacing: 120 WPM</p>
+                    </div>
+
+                    <div class="studio-card">
+                        <h4 class="mb-3">Word Counts</h4>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Total Words:</span>
+                            <span class="fw-bold">42</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Est. Duration:</span>
+                            <span class="fw-bold">0:25s</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
+

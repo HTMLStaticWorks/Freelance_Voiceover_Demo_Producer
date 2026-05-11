@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | VoiceFlow Studios</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .contact-wrapper {
+            padding: 150px 0 100px;
+        }
+
+        .contact-info-card {
+            background: var(--secondary-bg);
+            border-radius: 30px;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+            height: 100%;
+        }
+
+        .contact-form-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 3rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .form-control,
+        .form-select {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--glass-border);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control:focus {
+            background: rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-blue);
+            color: white;
+            box-shadow: var(--neon-glow);
+        }
+
+        .info-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 2rem;
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--glass-bg);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand brand-logo text-decoration-none" href="index.html"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard/dashboard.html">Dashboard</a></li>
+                    <li class="nav-item ms-lg-3"><a href="login.html" class="btn btn-primary-glow btn-sm px-3 nav-login-btn">Login</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <div class="d-flex align-items-center gap-2">
+                            <button onclick="toggleTheme()" class="btn btn-dark rounded-circle btn-sm">
+                                <i class="bi bi-moon-stars"></i>
+                            </button>
+                            <button onclick="toggleDirection()" class="btn btn-dark rounded-circle btn-sm">
+                                <i class="bi bi-translate"></i>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container contact-wrapper">
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <div class="contact-info-card antigravity-float">
+                    <h2 class="display-5 mb-4">Let's <span class="text-info">Connect</span></h2>
+                    <p class="text-muted mb-5">Have a question about our production process? Reach out to our studio
+                        team directly.</p>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="bi bi-geo-alt"></i></div>
+                        <div>
+                            <h6 class="mb-1">Studio Location</h6>
+                            <p class="text-muted mb-0">123 Soundwave Plaza, Austin, TX</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="bi bi-envelope"></i></div>
+                        <div>
+                            <h6 class="mb-1">Email Us</h6>
+                            <p class="text-muted mb-0">hello@voiceflowstudios.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon"><i class="bi bi-whatsapp"></i></div>
+                        <div>
+                            <h6 class="mb-1">WhatsApp Support</h6>
+                            <p class="text-muted mb-0">+1 (555) 0123-4567</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 pt-4">
+                        <h6>Follow the Frequency</h6>
+                        <div class="d-flex gap-3 mt-3">
+                            <a href="#" class="info-icon text-decoration-none"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="info-icon text-decoration-none"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#" class="info-icon text-decoration-none"><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="contact-form-card">
+                    <h3 class="mb-4">Project Inquiry</h3>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label small text-muted">Full Name</label>
+                                <input type="text" class="form-control" placeholder="John Doe">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small text-muted">Email Address</label>
+                                <input type="email" class="form-control" placeholder="john@example.com">
+                            </div>
+                        </div>
+
+                        <label class="form-label small text-muted">Primary Genre</label>
+                        <select class="form-select">
+                            <option selected disabled>Select Genre</option>
+                            <option>Commercial</option>
+                            <option>Animation / Gaming</option>
+                            <option>E-Learning / Corporate</option>
+                            <option>Trailer / Narration</option>
+                        </select>
+
+                        <label class="form-label small text-muted">A Little About Your Project</label>
+                        <textarea class="form-control" rows="5"
+                            placeholder="Tell us about the vibe you're going for..."></textarea>
+
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="termsCheck">
+                            <label class="form-check-label small text-muted" for="termsCheck">
+                                I agree to the production terms and privacy policy.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-premium btn-primary-glow w-100 py-3">Transmit
+                            Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+        <footer class="py-5 mt-5 glass-panel rounded-0">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h3 class="brand-logo mb-4"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></h3>
+                    <p class="text-muted pe-lg-5">The ultimate destination for premium voiceover demo production and
+                        sonic branding. We turn talent into icons.</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h5>Studio</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li><a href="about.html" class="text-decoration-none text-reset">About Us</a></li>
+                        <li><a href="services.html" class="text-decoration-none text-reset">Our Services</a></li>
+                        <li><a href="demo-reels.html" class="text-decoration-none text-reset">Portfolio</a></li>
+                        <li><a href="blog.html" class="text-decoration-none text-reset">Studio Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h5>Categories</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li><a href="#" class="text-decoration-none text-reset">Commercial</a></li>
+                        <li><a href="#" class="text-decoration-none text-reset">Animation</a></li>
+                        <li><a href="#" class="text-decoration-none text-reset">Gaming</a></li>
+                        <li><a href="#" class="text-decoration-none text-reset">Narration</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5>Newsletter</h5>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control bg-transparent border-secondary text-white"
+                            placeholder="Email">
+                        <button class="btn btn-primary-glow"><i class="bi bi-arrow-right"></i></button>
+                    </div>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-info fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-info fs-5"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-info fs-5"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 border-secondary">
+            <div class="d-flex justify-content-between align-items-center small text-muted footer-bottom-row">
+                <p class="mb-0">&copy; 2026 VoiceFlow Studios. All rights reserved.</p>
+                <div class="d-flex gap-4 footer-bottom-links">
+                    <a href="#" class="text-reset text-decoration-none">Privacy Policy</a>
+                    <a href="#" class="text-reset text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
