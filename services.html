@@ -94,16 +94,8 @@
                 margin-bottom: 3.5rem;
             }
 
-            .service-detail-card:first-child .service-illustration {
-                margin-top: 1rem;
-                height: 280px;
-            }
-
-            .service-detail-card:nth-child(2) .service-illustration {
-                margin-top: 1rem;
-                height: 280px;
-            }
-
+            .service-detail-card:first-child .service-illustration,
+            .service-detail-card:nth-child(2) .service-illustration,
             .service-detail-card:nth-child(3) .service-illustration {
                 margin-top: 1rem;
                 height: 280px;
@@ -117,18 +109,30 @@
                 justify-content: center;
                 min-height: 46px;
             }
+        }
 
-            .service-detail-card .btn-outline-info {
-                border: 1px solid var(--accent-blue);
-                color: var(--accent-blue);
-                background: transparent;
-            }
+        .btn-outline-info {
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-blue);
+            background: transparent;
+            transition: var(--transition-smooth);
+        }
 
-            .service-detail-card .btn-outline-warning {
-                border: 1px solid var(--accent-gold);
-                color: var(--accent-gold) !important;
-                background: transparent;
-            }
+        .btn-outline-info:hover {
+            background: var(--accent-blue) !important;
+            color: #fff !important;
+        }
+
+        .btn-outline-warning {
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            background: transparent;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-outline-warning:hover {
+            background: var(--accent-gold) !important;
+            color: #000 !important;
         }
     </style>
 </head>
@@ -138,7 +142,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand brand-logo text-decoration-none" href="index.html"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></a>
+            <a class="navbar-brand brand-logo text-decoration-none" href="index.html"><span class="brand-logo-mark"><i
+                        class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -151,14 +156,15 @@
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="dashboard/dashboard.html">Dashboard</a></li>
-                    <li class="nav-item ms-lg-3"><a href="login.html" class="btn btn-primary-glow btn-sm px-3 nav-login-btn">Login</a></li>
-                    <li class="nav-item ms-lg-2">
+                    <li class="nav-item ms-lg-1"><a href="login.html"
+                            class="btn btn-primary-glow btn-sm px-3 nav-login-btn">Login</a></li>
+                    <li class="nav-item ms-lg-1">
                         <div class="d-flex align-items-center gap-2">
                             <button onclick="toggleTheme()" class="btn btn-dark rounded-circle btn-sm">
                                 <i class="bi bi-moon-stars"></i>
                             </button>
                             <button onclick="toggleDirection()" class="btn btn-dark rounded-circle btn-sm">
-                                <i class="bi bi-translate"></i>
+                                <i class="bi bi-arrow-left-right"></i>
                             </button>
                         </div>
                     </li>
@@ -172,14 +178,16 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
-                    <h1 class="display-2 fw-bold mb-4 antigravity-float"><span class="text-info">Sonic</span> Solutions</h1>
+                    <h1 class="display-2 fw-bold mb-4 antigravity-float"><span class="text-info">Sonic</span> Solutions
+                    </h1>
                     <p class="text-muted lead mb-0" style="max-width: 700px;">From raw vocal capture to industry-ready
                         broadcast mastering, we provide the complete ecosystem for voice talent excellence.</p>
                 </div>
                 <div class="col-lg-5 mt-4 mt-lg-0">
                     <div class="glass-panel p-4 antigravity-float float-delayed-1">
                         <h5 class="mb-3">Service Ecosystem</h5>
-                        <p class="text-muted mb-0">Production, post, and sonic branding workflows aligned to agency-level
+                        <p class="text-muted mb-0">Production, post, and sonic branding workflows aligned to
+                            agency-level
                             delivery standards.</p>
                     </div>
                 </div>
@@ -257,7 +265,7 @@
                             <li class="mb-2"><i class="bi bi-patch-check-fill text-warning me-2"></i> Social Media Audio
                                 Kits</li>
                         </ul>
-                        <a href="contact.html" class="btn btn-outline-warning text-warning btn-premium">Learn More</a>
+                        <a href="contact.html" class="btn btn-outline-warning btn-premium">Learn More</a>
                     </div>
                     <div class="col-lg-6">
                         <div class="service-illustration" style="color: var(--accent-gold);">
@@ -286,12 +294,13 @@
         </div>
     </section>
 
-    
-        <footer class="py-5 mt-5 glass-panel rounded-0">
+
+    <footer class="py-5 mt-5 glass-panel rounded-0">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <h3 class="brand-logo mb-4"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></h3>
+                    <h3 class="brand-logo mb-4"><span class="brand-logo-mark"><i
+                                class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></h3>
                     <p class="text-muted pe-lg-5">The ultimate destination for premium voiceover demo production and
                         sonic branding. We turn talent into icons.</p>
                 </div>
@@ -343,5 +352,3 @@
 </body>
 
 </html>
-
-

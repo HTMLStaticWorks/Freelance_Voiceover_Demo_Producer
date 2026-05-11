@@ -101,7 +101,7 @@
 
         .auth-card a.text-info:hover,
         .auth-card a.text-info:focus-visible {
-            color: #ffffff !important;
+            color: var(--accent-purple) !important;
             text-decoration: underline !important;
         }
     </style>
@@ -114,7 +114,7 @@
             <i class="bi bi-moon-stars"></i>
         </button>
         <button onclick="toggleDirection()" class="btn btn-dark rounded-circle btn-sm">
-            <i class="bi bi-translate"></i>
+            <i class="bi bi-arrow-left-right"></i>
         </button>
     </div>
 
@@ -128,8 +128,9 @@
                                     class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span
                                     class="brand-logo-text">VOICEFLOW</span></a>
                         </div>
-                        <h1 class="h2 mb-2">Create Your Account</h1>
-                        <p class="text-muted mb-4">Set up your VoiceFlow profile and start your first production.</p>
+                        <h1 class="h2 mb-2 text-center">Create Your Account</h1>
+                        <p class="text-muted mb-4 text-center">Set up your VoiceFlow profile and start your first
+                            production.</p>
 
                         <form>
                             <div class="mb-3">
@@ -162,8 +163,8 @@
                             </div>
                             <div class="form-check mt-4 mb-4">
                                 <input class="form-check-input" type="checkbox" id="agreeTerms">
-                                <label class="form-check-label" for="agreeTerms">I agree to the Terms and Privacy
-                                    Policy</label>
+                                <label class="form-check-label" for="agreeTerms">I agree to the <a href="#"
+                                        class="text-info text-decoration-none">Terms and Privacy Policy</a></label>
                             </div>
                             <button type="submit" class="btn btn-primary-glow btn-premium w-100">Create Account</button>
 
@@ -208,4 +209,3 @@
 </body>
 
 </html>
-

@@ -72,6 +72,7 @@
             line-height: 1.1;
             text-decoration: none;
             white-space: nowrap;
+            transition: var(--transition-smooth);
         }
 
         .hero-cta-group .hero-btn-primary {
@@ -80,10 +81,24 @@
             border: 1px solid transparent;
         }
 
+        .hero-cta-group .hero-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(58, 190, 255, 0.3);
+            filter: brightness(1.1);
+            color: #fff;
+        }
+
         .hero-cta-group .hero-btn-outline {
             background: transparent;
             color: var(--accent-blue);
             border: 1px solid var(--accent-blue);
+        }
+
+        .hero-cta-group .hero-btn-outline:hover {
+            background: var(--accent-blue);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(58, 190, 255, 0.2);
         }
 
         .category-card {
@@ -156,7 +171,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand brand-logo text-decoration-none" href="index.html"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></a>
+            <a class="navbar-brand brand-logo text-decoration-none" href="index.html"><span class="brand-logo-mark"><i
+                        class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
                 <span class="navbar-toggler-icon"></span>
@@ -171,14 +187,15 @@
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="dashboard/dashboard.html">Dashboard</a></li>
-                    <li class="nav-item ms-lg-3"><a href="login.html" class="btn btn-primary-glow btn-sm px-3 nav-login-btn">Login</a></li>
-                    <li class="nav-item ms-lg-2">
+                    <li class="nav-item ms-lg-1"><a href="login.html"
+                            class="btn btn-primary-glow btn-sm px-3 nav-login-btn">Login</a></li>
+                    <li class="nav-item ms-lg-1">
                         <div class="d-flex align-items-center gap-2">
                             <button onclick="toggleTheme()" class="btn btn-dark rounded-circle btn-sm">
                                 <i class="bi bi-moon-stars"></i>
                             </button>
                             <button onclick="toggleDirection()" class="btn btn-dark rounded-circle btn-sm">
-                                <i class="bi bi-translate"></i>
+                                <i class="bi bi-arrow-left-right"></i>
                             </button>
                         </div>
                     </li>
@@ -287,35 +304,38 @@
             </div>
             <div class="row g-4 justify-content-center">
                 <div class="col-md-6 col-lg-4">
-                    <div class="studio-card text-center h-100 d-flex flex-column">
+                    <div class="studio-card text-center h-100 d-flex flex-column align-items-center">
                         <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop"
                             alt="Sarah J" class="talent-avatar">
                         <h4>Sarah Jenkins</h4>
                         <p class="text-info">Commercial • Animation</p>
                         <div id="talent-wf-1" class="waveform-container justify-content-center mb-3"></div>
-                        <button class="btn btn-sm btn-outline-light mt-auto align-self-center"><i class="bi bi-play-fill me-1"></i> Play
+                        <button class="btn btn-sm btn-outline-light mt-auto align-self-center"><i
+                                class="bi bi-play-fill me-1"></i> Play
                             Reel</button>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="studio-card text-center h-100 d-flex flex-column">
+                    <div class="studio-card text-center h-100 d-flex flex-column align-items-center">
                         <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
                             alt="Marcus L" class="talent-avatar" style="border-color: var(--accent-purple);">
                         <h4>Marcus Lowe</h4>
                         <p class="text-info">Video Games • Trailers</p>
                         <div id="talent-wf-2" class="waveform-container justify-content-center mb-3"></div>
-                        <button class="btn btn-sm btn-outline-light mt-auto align-self-center"><i class="bi bi-play-fill me-1"></i> Play
+                        <button class="btn btn-sm btn-outline-light mt-auto align-self-center"><i
+                                class="bi bi-play-fill me-1"></i> Play
                             Reel</button>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
-                    <div class="studio-card text-center h-100 d-flex flex-column">
+                    <div class="studio-card text-center h-100 d-flex flex-column align-items-center">
                         <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
                             alt="Elena R" class="talent-avatar" style="border-color: var(--accent-gold);">
                         <h4>Elena Rodriguez</h4>
                         <p class="text-info">E-Learning • Corporate</p>
                         <div id="talent-wf-3" class="waveform-container justify-content-center mb-3"></div>
-                        <button class="btn btn-sm btn-outline-light mt-auto align-self-center"><i class="bi bi-play-fill me-1"></i> Play
+                        <button class="btn btn-sm btn-outline-light mt-auto align-self-center"><i
+                                class="bi bi-play-fill me-1"></i> Play
                             Reel</button>
                     </div>
                 </div>
@@ -450,7 +470,8 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <h3 class="brand-logo mb-4"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></h3>
+                    <h3 class="brand-logo mb-4"><span class="brand-logo-mark"><i
+                                class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></h3>
                     <p class="text-muted pe-lg-5">The ultimate destination for premium voiceover demo production and
                         sonic branding. We turn talent into icons.</p>
                 </div>
@@ -511,5 +532,3 @@
 </body>
 
 </html>
-
-

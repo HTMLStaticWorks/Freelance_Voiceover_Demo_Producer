@@ -109,7 +109,7 @@ function initSidebarMenu() {
     triggerWrap.innerHTML = '<button class="sidebar-hamburger-btn" type="button" aria-label="Open Menu"><i class="bi bi-list"></i></button>';
 
     if (firstHeader) {
-        mainContent.insertBefore(triggerWrap, firstHeader);
+        firstHeader.prepend(triggerWrap);
     } else {
         mainContent.prepend(triggerWrap);
     }

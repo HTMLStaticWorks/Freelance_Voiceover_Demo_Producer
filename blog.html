@@ -47,6 +47,8 @@
             overflow: hidden;
             height: 100%;
             transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
         }
 
         .blog-card:hover {
@@ -150,7 +152,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand brand-logo text-decoration-none" href="index.html"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></a>
+            <a class="navbar-brand brand-logo text-decoration-none" href="index.html"><span class="brand-logo-mark"><i
+                        class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -163,14 +166,15 @@
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="dashboard/dashboard.html">Dashboard</a></li>
-                    <li class="nav-item ms-lg-3"><a href="login.html" class="btn btn-primary-glow btn-sm px-3 nav-login-btn">Login</a></li>
-                    <li class="nav-item ms-lg-2">
+                    <li class="nav-item ms-lg-1"><a href="login.html"
+                            class="btn btn-primary-glow btn-sm px-3 nav-login-btn">Login</a></li>
+                    <li class="nav-item ms-lg-1">
                         <div class="d-flex align-items-center gap-2">
                             <button onclick="toggleTheme()" class="btn btn-dark rounded-circle btn-sm">
                                 <i class="bi bi-moon-stars"></i>
                             </button>
                             <button onclick="toggleDirection()" class="btn btn-dark rounded-circle btn-sm">
-                                <i class="bi bi-translate"></i>
+                                <i class="bi bi-arrow-left-right"></i>
                             </button>
                         </div>
                     </li>
@@ -184,13 +188,16 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
-                    <h1 class="display-3 fw-bold mb-4 antigravity-float">The <span class="text-info">Studio</span> Blog</h1>
-                    <p class="text-muted lead mb-0" style="max-width: 700px;">Insights on voice acting, audio engineering, and industry marketing.</p>
+                    <h1 class="display-3 fw-bold mb-4 antigravity-float">The <span class="text-info">Studio</span> Blog
+                    </h1>
+                    <p class="text-muted lead mb-0" style="max-width: 700px;">Insights on voice acting, audio
+                        engineering, and industry marketing.</p>
                 </div>
                 <div class="col-lg-5 mt-4 mt-lg-0">
                     <div class="glass-panel p-4 antigravity-float float-delayed-1">
                         <h5 class="mb-3">Editorial Stream</h5>
-                        <p class="text-muted mb-0">Weekly analysis, practical tactics, and studio-level techniques for working voice talent.</p>
+                        <p class="text-muted mb-0">Weekly analysis, practical tactics, and studio-level techniques for
+                            working voice talent.</p>
                     </div>
                 </div>
             </div>
@@ -202,42 +209,42 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-card">
-                        <img src="https://t4.ftcdn.net/jpg/08/75/75/81/360_F_875758185_3Xzm6NKo4TIVS4pR7ilgpUKQlZUFUdAA.jpg" alt="Mic"
-                            class="blog-img">
-                        <div class="p-4">
+                        <img src="https://t4.ftcdn.net/jpg/08/75/75/81/360_F_875758185_3Xzm6NKo4TIVS4pR7ilgpUKQlZUFUdAA.jpg"
+                            alt="Mic" class="blog-img">
+                        <div class="p-4 d-flex flex-column h-100">
                             <span class="blog-meta">Gear Guides</span>
                             <h4>Choosing the Right Mic for Your Home Studio</h4>
                             <p class="text-muted small">A deep dive into condensers, dynamics, and why the TLM 103 is a
                                 VO staple...</p>
-                            <a href="#" class="text-info text-decoration-none small fw-bold">Read More <i
+                            <a href="#" class="text-info text-decoration-none small fw-bold mt-auto">Read More <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-card">
-                        <img src="https://thumbs.dreamstime.com/b/hands-holding-book-title-career-guidance-book-title-career-guidance-101192844.jpg" alt="Studio"
-                            class="blog-img">
-                        <div class="p-4">
+                        <img src="https://thumbs.dreamstime.com/b/hands-holding-book-title-career-guidance-book-title-career-guidance-101192844.jpg"
+                            alt="Studio" class="blog-img">
+                        <div class="p-4 d-flex flex-column h-100">
                             <span class="blog-meta">Career Tips</span>
                             <h4>How to Market Your Demo to Agencies</h4>
                             <p class="text-muted small">The dos and don'ts of emailing talent agents without being
                                 annoying...</p>
-                            <a href="#" class="text-info text-decoration-none small fw-bold">Read More <i
+                            <a href="#" class="text-info text-decoration-none small fw-bold mt-auto">Read More <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 mx-md-auto mx-lg-0">
                     <div class="blog-card">
-                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWMlMjBwZXJmb3JtYW5jZXxlbnwwfHwwfHx8MA%3D%3D" alt="Script"
-                            class="blog-img">
-                        <div class="p-4">
+                        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bXVzaWMlMjBwZXJmb3JtYW5jZXxlbnwwfHwwfHx8MA%3D%3D"
+                            alt="Script" class="blog-img">
+                        <div class="p-4 d-flex flex-column h-100">
                             <span class="blog-meta">Performance</span>
                             <h4>Mastering the 3-Step Cold Read</h4>
                             <p class="text-muted small">Techniques used by top commercial actors to nail an audition on
                                 the first take...</p>
-                            <a href="#" class="text-info text-decoration-none small fw-bold">Read More <i
+                            <a href="#" class="text-info text-decoration-none small fw-bold mt-auto">Read More <i
                                     class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
@@ -309,7 +316,8 @@
                         <p class="text-muted mb-4">See how one developing talent upgraded a basic home recording into a
                             cinematic demo that secured agency callbacks within two weeks.</p>
                         <ul class="list-unstyled text-muted mb-4">
-                            <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i> Script direction with
+                            <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i> Script direction
+                                with
                                 market-specific positioning</li>
                             <li class="mb-2"><i class="bi bi-check-circle-fill text-info me-2"></i> Layered sound design
                                 for brand identity</li>
@@ -344,12 +352,13 @@
         </div>
     </section>
 
-    
-        <footer class="py-5 mt-5 glass-panel rounded-0">
+
+    <footer class="py-5 mt-5 glass-panel rounded-0">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <h3 class="brand-logo mb-4"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></h3>
+                    <h3 class="brand-logo mb-4"><span class="brand-logo-mark"><i
+                                class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></h3>
                     <p class="text-muted pe-lg-5">The ultimate destination for premium voiceover demo production and
                         sonic branding. We turn talent into icons.</p>
                 </div>
@@ -401,5 +410,3 @@
 </body>
 
 </html>
-
-

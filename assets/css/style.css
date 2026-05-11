@@ -184,7 +184,10 @@ h6 {
 }
 
 .navbar .container-fluid {
+    height: 100%;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .navbar .navbar-nav {
@@ -205,7 +208,7 @@ h6 {
 .nav-link {
     color: var(--text-main) !important;
     font-weight: 500;
-    margin-inline: 1rem;
+    margin-inline: 0.6rem;
     position: relative;
     white-space: nowrap;
     display: inline-flex;
@@ -336,7 +339,7 @@ h6 {
 .brand-logo-text {
     font-size: 1.5rem;
     font-weight: 800;
-    line-height: 1;
+    line-height: 1.2;
     color: var(--accent-blue);
 }
 
@@ -487,9 +490,8 @@ footer .text-info.fs-5:focus-visible {
     }
 
     .navbar .navbar-toggler {
-        order: -1;
-        margin-inline-end: 0.75rem;
-        margin-inline-start: 0;
+        margin-inline-start: auto;
+        margin-inline-end: 0;
     }
 
     .navbar .navbar-toggler {
@@ -675,7 +677,8 @@ footer .text-info.fs-5:focus-visible {
 
     .sidebar-mobile-trigger {
         display: flex;
-        margin-bottom: 1rem;
+        margin-bottom: 0;
+        margin-inline-end: 1rem;
     }
 
     .dashboard-layout .sidebar.active+.main-content .sidebar-mobile-trigger {
@@ -772,12 +775,19 @@ footer .text-info.fs-5:focus-visible {
     }
 
     .dashboard-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
     }
 
     .main-content {
         padding: 1rem;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .dashboard-layout {
+        display: block;
     }
 }

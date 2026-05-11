@@ -49,6 +49,8 @@
             transition: var(--transition-smooth);
             position: relative;
             height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .pricing-card.popular {
@@ -115,6 +117,13 @@
             padding: 2rem;
             height: 100%;
             transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pricing-extra-card strong {
+            margin-top: auto;
         }
 
         .pricing-extra-card:hover {
@@ -134,6 +143,20 @@
         .pricing-cta-box:hover {
             border-color: var(--accent-purple);
             box-shadow: var(--neon-glow);
+        }
+
+        .pricing-card .btn-outline-info {
+            border: 1px solid var(--accent-blue);
+            color: var(--accent-blue);
+            background: transparent;
+            transition: var(--transition-smooth);
+        }
+
+        .pricing-card .btn-outline-info:hover {
+            background: var(--accent-blue);
+            color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(58, 190, 255, 0.2);
         }
 
         .faq-question {
@@ -200,7 +223,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand brand-logo text-decoration-none" href="index.html"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></a>
+            <a class="navbar-brand brand-logo text-decoration-none" href="index.html"><span class="brand-logo-mark"><i
+                        class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -213,14 +237,15 @@
                     <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="dashboard/dashboard.html">Dashboard</a></li>
-                    <li class="nav-item ms-lg-3"><a href="login.html" class="btn btn-primary-glow btn-sm px-3 nav-login-btn">Login</a></li>
-                    <li class="nav-item ms-lg-2">
+                    <li class="nav-item ms-lg-1"><a href="login.html"
+                            class="btn btn-primary-glow btn-sm px-3 nav-login-btn">Login</a></li>
+                    <li class="nav-item ms-lg-1">
                         <div class="d-flex align-items-center gap-2">
                             <button onclick="toggleTheme()" class="btn btn-dark rounded-circle btn-sm">
                                 <i class="bi bi-moon-stars"></i>
                             </button>
                             <button onclick="toggleDirection()" class="btn btn-dark rounded-circle btn-sm">
-                                <i class="bi bi-translate"></i>
+                                <i class="bi bi-arrow-left-right"></i>
                             </button>
                         </div>
                     </li>
@@ -234,13 +259,16 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
-                    <h1 class="display-3 fw-bold mb-4 antigravity-float">Premium <span class="text-info">Production</span> Tiers</h1>
-                    <p class="text-muted lead mb-0" style="max-width: 700px;">Choose the plan that matches your career ambitions.</p>
+                    <h1 class="display-3 fw-bold mb-4 antigravity-float">Premium <span
+                            class="text-info">Production</span> Tiers</h1>
+                    <p class="text-muted lead mb-0" style="max-width: 700px;">Choose the plan that matches your career
+                        ambitions.</p>
                 </div>
                 <div class="col-lg-5 mt-4 mt-lg-0">
                     <div class="glass-panel p-4 antigravity-float float-delayed-1">
                         <h5 class="mb-3">Pricing Framework</h5>
-                        <p class="text-muted mb-0">Three structured tracks designed for starter, growth, and agency-grade voiceover goals.</p>
+                        <p class="text-muted mb-0">Three structured tracks designed for starter, growth, and
+                            agency-grade voiceover goals.</p>
                     </div>
                 </div>
             </div>
@@ -249,7 +277,7 @@
 
     <section class="pb-5 mb-5">
         <div class="container">
-            <div class="row g-4 align-items-center">
+            <div class="row g-4 align-items-stretch">
                 <!-- Starter -->
                 <div class="col-lg-4">
                     <div class="pricing-card">
@@ -262,7 +290,7 @@
                             <li><i class="bi bi-check2"></i> Standard Music Bed</li>
                             <li><i class="bi bi-check2"></i> 48-Hour Delivery</li>
                         </ul>
-                        <button class="btn btn-outline-info btn-premium w-100">Select Starter</button>
+                        <button class="btn btn-outline-info btn-premium w-100 mt-auto">Select Starter</button>
                     </div>
                 </div>
 
@@ -279,7 +307,7 @@
                             <li><i class="bi bi-check2"></i> Licensed Music beds</li>
                             <li><i class="bi bi-check2"></i> Script Consulting</li>
                         </ul>
-                        <button class="btn btn-primary-glow btn-premium w-100">Go Professional</button>
+                        <button class="btn btn-primary-glow btn-premium w-100 mt-auto">Go Professional</button>
                     </div>
                 </div>
 
@@ -295,7 +323,7 @@
                             <li><i class="bi bi-check2"></i> ATMOS Spatial Mix</li>
                             <li><i class="bi bi-check2"></i> Agency Submission Kit</li>
                         </ul>
-                        <button class="btn btn-outline-info btn-premium w-100">Contact Elite</button>
+                        <button class="btn btn-outline-info btn-premium w-100 mt-auto">Contact Elite</button>
                     </div>
                 </div>
             </div>
@@ -423,12 +451,13 @@
         </div>
     </section>
 
-    
-        <footer class="py-5 mt-5 glass-panel rounded-0">
+
+    <footer class="py-5 mt-5 glass-panel rounded-0">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <h3 class="brand-logo mb-4"><span class="brand-logo-mark"><i class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></h3>
+                    <h3 class="brand-logo mb-4"><span class="brand-logo-mark"><i
+                                class="bi bi-soundwave"></i></span><span class="brand-logo-text">VOICEFLOW</span></h3>
                     <p class="text-muted pe-lg-5">The ultimate destination for premium voiceover demo production and
                         sonic branding. We turn talent into icons.</p>
                 </div>
@@ -480,5 +509,3 @@
 </body>
 
 </html>
-
-
