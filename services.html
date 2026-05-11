@@ -49,8 +49,10 @@
             transition: var(--transition-smooth);
         }
 
-        .service-detail-card:nth-child(even) .row {
-            flex-direction: row-reverse;
+        @media (min-width: 992px) {
+            .service-detail-card:nth-child(even) .row {
+                flex-direction: row-reverse;
+            }
         }
 
         .service-illustration {
@@ -71,8 +73,24 @@
                 min-height: 62vh;
             }
 
+            .service-detail-card {
+                padding: 3rem 2rem;
+                text-align: center;
+            }
+
             .service-detail-card h2 {
                 text-align: center;
+            }
+
+            .service-detail-card p,
+            .service-detail-card ul {
+                text-align: center;
+                margin-inline: auto;
+            }
+
+            .service-detail-card ul {
+                display: inline-block;
+                text-align: start;
             }
 
             .service-detail-card .btn {
@@ -81,10 +99,11 @@
                 margin-inline: auto;
                 align-items: center;
                 justify-content: center;
+                margin-top: 1.5rem;
             }
 
-            .service-detail-card:first-child .service-illustration {
-                margin-top: 1rem;
+            .service-illustration {
+                margin-top: 1.5rem;
                 height: 300px;
             }
         }
@@ -148,7 +167,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navContent">
-                <ul class="navbar-nav ms-auto align-items-center">
+                <ul class="navbar-nav mx-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -156,19 +175,16 @@
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="dashboard/dashboard.html">Dashboard</a></li>
-                    <li class="nav-item ms-lg-1"><a href="login.html"
-                            class="btn btn-primary-glow btn-sm px-3 nav-login-btn">Login</a></li>
-                    <li class="nav-item ms-lg-1">
-                        <div class="d-flex align-items-center gap-2">
-                            <button onclick="toggleTheme()" class="btn btn-dark rounded-circle btn-sm">
-                                <i class="bi bi-moon-stars"></i>
-                            </button>
-                            <button onclick="toggleDirection()" class="btn btn-dark rounded-circle btn-sm">
-                                <i class="bi bi-arrow-left-right"></i>
-                            </button>
-                        </div>
-                    </li>
                 </ul>
+                <div class="navbar-nav align-items-center gap-2">
+                    <a href="login.html" class="btn btn-primary-glow btn-sm px-3 nav-login-btn">Login</a>
+                    <button onclick="toggleTheme()" class="btn btn-dark rounded-circle btn-sm">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
+                    <button onclick="toggleDirection()" class="btn btn-dark rounded-circle btn-sm">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
@@ -199,7 +215,7 @@
         <div class="container">
             <!-- Service 1 -->
             <div class="service-detail-card studio-card antigravity-float">
-                <div class="row align-items-center">
+                <div class="row align-items-center gy-4">
                     <div class="col-lg-6">
                         <h2 class="display-5 mb-4">Demo Production</h2>
                         <p class="text-muted mb-4 lead">The heart of our studio. We take your raw recordings and
@@ -225,7 +241,7 @@
 
             <!-- Service 2 -->
             <div class="service-detail-card studio-card float-delayed-1">
-                <div class="row align-items-center">
+                <div class="row align-items-center gy-4">
                     <div class="col-lg-6">
                         <h2 class="display-5 mb-4">Mixing & Mastering</h2>
                         <p class="text-muted mb-4 lead">Already have a demo but it lacks "that" professional punch? Our
@@ -251,7 +267,7 @@
 
             <!-- Service 3 -->
             <div class="service-detail-card studio-card float-delayed-2">
-                <div class="row align-items-center">
+                <div class="row align-items-center gy-4">
                     <div class="col-lg-6">
                         <h2 class="display-5 mb-4">Sonic Branding</h2>
                         <p class="text-muted mb-4 lead">Develop a unique audio identity. We help actors and studios

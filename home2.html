@@ -150,6 +150,11 @@
             border-radius: 16px;
             padding: 1rem;
             text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero2-cta-group {
@@ -236,6 +241,26 @@
             .cta-panel {
                 text-align: center;
             }
+
+            .home2-booking-cta .d-flex.flex-wrap {
+                flex-direction: column;
+            }
+
+            .home2-booking-cta .d-flex.flex-wrap .btn {
+                width: 100%;
+            }
+
+            .home2-booking-cta .metric-tile {
+                padding: 1rem;
+            }
+
+            .home2-booking-cta .metric-tile h4 {
+                font-size: 1.25rem;
+            }
+
+            .home2-booking-cta .metric-tile small {
+                font-size: 0.75rem;
+            }
         }
     </style>
 </head>
@@ -256,7 +281,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navContent">
-                <ul class="navbar-nav ms-auto align-items-center">
+                <ul class="navbar-nav mx-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" href="home2.html">Home 2</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
@@ -264,19 +289,16 @@
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="dashboard/dashboard.html">Dashboard</a></li>
-                    <li class="nav-item ms-lg-1"><a href="login.html"
-                            class="btn btn-primary-glow btn-sm px-3 nav-login-btn">Login</a></li>
-                    <li class="nav-item ms-lg-1">
-                        <div class="d-flex align-items-center gap-2">
-                            <button onclick="toggleTheme()" class="btn btn-dark rounded-circle btn-sm">
-                                <i class="bi bi-moon-stars"></i>
-                            </button>
-                            <button onclick="toggleDirection()" class="btn btn-dark rounded-circle btn-sm">
-                                <i class="bi bi-arrow-left-right"></i>
-                            </button>
-                        </div>
-                    </li>
                 </ul>
+                <div class="navbar-nav align-items-center gap-2">
+                    <a href="login.html" class="btn btn-primary-glow btn-sm px-3 nav-login-btn">Login</a>
+                    <button onclick="toggleTheme()" class="btn btn-dark rounded-circle btn-sm">
+                        <i class="bi bi-moon-stars"></i>
+                    </button>
+                    <button onclick="toggleDirection()" class="btn btn-dark rounded-circle btn-sm">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
